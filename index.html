@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width-device-width,initial-scale-1.0" />
     <meta http-equiv="=X-UA-Compatible" content="ie=edge" />
-    <titel>My Google Map</titel>
+    <title>My Google Map</title>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-      <script>
-        </script>
+    <h1>My Google Map</h1>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        // Map Options
+        let options = {
+          zoom: 9,
+          center: { lat: 44.9537, lng: -93.09 }
+        };
+        // New Map
+        let map = new google.maps.Map(document.getElementById("map"), options);
+        // Add Marker
+        let marker = new google.maps.Marker({
+          position: { lat: 44.9239, lng: -92.9594 },
+          map: map
+        });
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeZcmKYGyU1zSlWg7nkfgwCC6mS9U03Jc&callback=initMap"
+      type="text/javascript"
+    ></script>
   </body>
 </html>
